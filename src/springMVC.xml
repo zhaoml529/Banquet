@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans	   
+							http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context-3.2.xsd
+							http://www.springframework.org/schema/mvc
+							http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+							">
+ <!-- springMVC.xml配置文件 -->
+ 
+<mvc:annotation-driven />
+
+<!-- 把标记了@Controller注解的类转换为bean -->    
+<context:component-scan base-package="com.hdc.*" />
+
+<!-- restful -->
+<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+
+<!-- 视图处理器 -->
+<bean id="jspViewResolver"  
+    class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/WEB-INF/jsp/" />  
+        <property name="suffix" value=".jsp" />  
+        <property name="contentType" value="text/html;charset=utf-8" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" /> 
+</bean>
+
+<!-- 对静态资源文件的访问 -->  
+<!-- 所有的页面引用到css/**的资源都从css/*里面进行查找 -->
+ 	<mvc:resources mapping="fonts/**" location="fonts/" cache-period="31556926"/>  
+    <mvc:resources mapping="js/**" location="js/" cache-period="31556926"/>  
+    <mvc:resources mapping="css/**" location="css/" cache-period="31556926"/>
+	<mvc:resources mapping="imges/**" location="imges/" cache-period="31556926"/>
+	<mvc:resources mapping="img/**" location="img/" cache-period="31556926"/>
+	<mvc:resources mapping="images/**" location="images/" cache-period="31556926"/>
+	<mvc:resources mapping="UploadFile/**" location="/UploadFile/" cache-period="31556926"/>
+
+   
+<!-- 全局异常配置 -->  
+     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+         <property name="exceptionMappings">  
+             <props>  
+                 <prop key="java.lang.Exception">ErrorPage/Exception</prop>  
+                 <prop key="java.lang.Throwable">ErrorPage/Exception</prop>  
+             </props>  
+         </property>  
+         <property name="statusCodes">  
+             <props>  
+                 <prop key="ErrorPage/Exception">500</prop>  
+                 <prop key="ErrorPage/Exception">404</prop>  
+             </props>  
+         </property>  
+         <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->  
+         <property name="warnLogCategory" value="WARN"></property>  
+         <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->  
+         <property name="defaultErrorView" value="errors/error"></property>  
+         <!-- 默认HTTP状态码 -->  
+         <property name="defaultStatusCode" value="500"></property>  
+     </bean>  
+
+
+
+
+<!-- 上传配置 -->
+<!--  
+	org.springframework.web.multipart.commons.CommonsMultipartResolver这个是
+	spring的默认配置，但是kindEditor的request被拦截导致无法上传图片。
+	重写CommonsMultipartResolver中的isMultipart方法解决问题。
+	com.hdc.interceptors.DefaultMultipartResolver
+-->
+<bean id="multipartResolver"
+	class="com.hdc.interceptors.DefaultMultipartResolver">
+ 	<property name="maxInMemorySize">
+		<value>104857600</value><!-- 最大10M -->
+	</property>
+	<property name="uploadTempDir">
+		<value>UploadFile</value>
+	</property>
+	<property name="defaultEncoding">
+		<value>UTF-8</value>
+	</property>
+</bean>
+</beans>
