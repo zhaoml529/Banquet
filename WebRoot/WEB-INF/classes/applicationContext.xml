@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+                           http://www.springframework.org/schema/tx  
+                           http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
+                           http://www.springframework.org/schema/aop  
+                           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
+    <!-- 引入配置文件 --> 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+        <property name="locations"> 
+            <list> 
+                <value>classpath:/jdbc.properties</value> 
+            </list> 
+        </property> 
+    </bean>
+	<!-- 数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<!-- 指定连接数据库的URL -->
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<!-- 指定连接数据库的用户名 -->
+		<property name="user" value="${jdbc.username}" />
+		<!-- 指定连接数据库的密码 -->
+		<property name="password" value="${jdbc.password}" />
+		<!-- 指定连接数据库连接池的最大连接数 -->
+		<property name="maxPoolSize" value="${proxool.maxConnCount}" />
+		<!-- 指定连接数据库连接池的最小连接数 -->
+		<property name="minPoolSize" value="${proxool.minConnCount}" />
+		<!-- 指定连接数据库连接池的初始化连接数 -->
+		<property name="initialPoolSize" value="40" />
+		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+		<property name="maxIdleTime" value="60" />
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement" value="5" />
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+	</bean>  
+    <!--可以写为com/rjxy/entity/*.hbm.xml  --> 
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+        <property name="dataSource" ref="dataSource" /> 
+        <property name="mappingResources"> 
+            <list> 
+             	<value>com/hdc/entity/Users.hbm.xml</value>
+             	<value>com/hdc/entity/Order.hbm.xml</value>
+             	<value>com/hdc/entity/Menu.hbm.xml</value>
+             	<value>com/hdc/entity/News.hbm.xml</value>
+             	<value>com/hdc/entity/Hotel.hbm.xml</value>
+             	<value>com/hdc/entity/BanquetRoom.hbm.xml</value>
+            </list> 
+        </property> 
+        <property name="hibernateProperties"> 
+         	<props>
+		         <prop key="hibernate.show_sql">true</prop>
+		         <prop key="hibernate.format_sql">true</prop>
+		         <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+		 	 <prop key="hibernate.hbm2ddl.auto">update</prop> 
+  			</props>
+        </property> 
+    </bean>  
+	    
+	<!-- 给Dao注入sessionFactory -->    
+    <bean id="entityDao" class="com.hdc.core.BaseDaoImpl">
+	  <property name="sessionFactory" ref="sessionFactory" /> 
+    </bean> 
+  
+    <!-- 事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 对标注@Transactional注解的Bean进行处理，以织入事务管理切面 -->
+    <tx:annotation-driven transaction-manager="transactionManager" /> 
+    
+    
+    <bean id="user_hotelService" class="com.hdc.user.action.UserAction"></bean>
+    <bean id="userService" class="com.hdc.user.action.UserAction"></bean>
+    <bean id="banquetService" class="com.hdc.banquet.action.BanquetAction"></bean>
+    <bean id="banquet_hotelService" class="com.hdc.banquet.action.BanquetAction"></bean>
+    <bean id="menu_hotelService" class="com.hdc.menu.action.MenuAction"></bean>
+   <!--  <bean id="banquetService" class="com.hdc.banquet.action.BanquetAction" p:banquetService-ref="banquetService"></bean> -->
+    <bean id="loginService" class="com.hdc.user.action.LoginAction"></bean>
+    <bean id="mainService" class="com.hdc.user.action.LoginAction"></bean>
+    <bean id="login_userService" class="com.hdc.user.action.LoginAction"></bean>
+    <bean id="login_newsService" class="com.hdc.user.action.LoginAction"></bean>
+    <bean id="hotelService" class="com.hdc.hotel.action.HotelAction"></bean>
+    <bean id="hotel_banquetService" class="com.hdc.hotel.action.HotelAction"></bean>
+    <bean id="hotel_menuService" class="com.hdc.hotel.action.HotelAction"></bean>
+    <bean id="hotel_newsService" class="com.hdc.hotel.action.HotelAction"></bean>
+    <bean id="orderService" class="com.hdc.order.action.OrderAction"></bean>
+    <bean id="order_hotelService" class="com.hdc.order.action.OrderAction"></bean>
+    <bean id="order_banquetService" class="com.hdc.order.action.OrderAction"></bean>
+	<bean id="newsService" class="com.hdc.news.action.NewsAction"></bean>
+	<bean id="news_hotelService" class="com.hdc.menu.action.MenuAction"></bean>
+	<bean id="news_userService" class="com.hdc.menu.action.MenuAction"></bean>
+</beans>
