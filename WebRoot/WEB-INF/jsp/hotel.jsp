@@ -68,6 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		        center: center,
 		        zoomLevel: 13
 		    });
+		    map.notifyResize();
 		    var marker = new soso.maps.Marker({
 		        position: center,
 		        map: map
@@ -248,7 +249,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="page-title"><span class="glyphicon glyphicon-map-marker">&nbsp;</span>位置</div>
                             <div class="contact-information" style="border:1px solid red;border-color: #B10021">
                            	        <input type="hidden" id="zb" value="${hotel.zb}">
-     								<div style="width:485px;height:400px" id="mapContainer"></div>
+     								<div style="width: 485px;height: 360px" id="mapContainer"></div>
                             </div> <!-- /.contact-information -->
 						</div> <!-- /.inner-content -->
 					</div> <!-- /.col-md-6 -->

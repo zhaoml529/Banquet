@@ -64,26 +64,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="table-responsive">
     <table class="table table-striped">
     	<tr>
-    		<td>酒店名称</td>
+    		<td align="center">酒店名称</td>
     		<td><input name="jdmc" type="text" class="form-control" placeholder="酒店名称" required/></td>
     	</tr>
     	<tr>
-    		<td>酒店地址</td>
+    		<td align="center">酒店地址</td>
     		<td><input name="jddz" type="text" class="form-control" placeholder="酒店地址" required/></td>
     	</tr>
     	<tr>
-    		<td>联系人</td>
+    		<td align="center">联系人</td>
     		<td><input name="lxr" type="text" class="form-control" placeholder="联系电话" required/></td>
     	</tr>
     	<tr>
-    		<td>酒店描述</td>
+    		<td align="center">酒店描述</td>
     		<td><textarea id="editor_id1" name="jdjj" rows="3" cols="40">
 					&lt;strong&gt;酒店简介&lt;/strong&gt;
 				</textarea>
 			</td>
     	</tr>
     	<tr>
-    		<td>联系电话</td>
+    		<td align="center">联系电话</td>
     		<td><input name="lxdh" type="text" class="form-control" placeholder="联系电话" required/></td>
     	</tr>
     	<tr>
@@ -100,11 +100,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<tr>
     		<td>坐标</td>
     		<td>
-    		<div><input name="zb" id="latLng" type="text" class="form-control" placeholder="点击地图获取坐标" required/>
+    			<input name="zb" id="latLng" type="text" class="form-control" placeholder="点击地图获取坐标" required/>
     			<span style="height:30px;display:none" id="city"></span>
 				<div style="width:603px;height:300px" id="mapContainer"></div>
-				<p>根据客户端IP定位地图中心位置。</p>
-    		
     		</td>
     	</tr>
     	<tr>
