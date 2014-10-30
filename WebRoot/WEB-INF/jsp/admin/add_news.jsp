@@ -54,12 +54,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="table-responsive">
     <table class="table table-striped">
     	<tr>
-    		<td>新闻标题</td>
     		<td><input name="xwbt" type="text" class="form-control" placeholder="新闻标题(长度不超过50字)" required/></td>
     	</tr>
     	<tr>
-    		<td>新闻内容</td>
-    		<td><textarea id="editor_id" name="xwnr" rows="20" cols="40">
+    		<td>
+    			<textarea id="editor_id" name="xwnr" rows="20" cols="80">
 					&lt;strong&gt;新闻内容&lt;/strong&gt;
 				</textarea>
 			</td>

@@ -179,7 +179,7 @@ public class OrderAction {
 	 * @throws
 	 */
 	@RequestMapping("/saveOrders")
-	public @ResponseBody Order saveOrder(HttpServletRequest request, HttpServletResponse response) throws IOException{
+	public @ResponseBody Order saveOrders(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String start = request.getParameter("start");
 		String end = request.getParameter("end");
 		String title = request.getParameter("title"); 

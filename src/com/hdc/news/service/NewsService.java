@@ -73,4 +73,9 @@ public class NewsService extends BaseService <News>{
 			return newsList.size();
 		}
 	}
+	
+	public List<News> findByUserId(String user_id ){
+		List<News> newsList = findByWhere("com.hdc.entity.News", new String[]{"users"}, new String[]{user_id});
+		return newsList;
+	}
 }

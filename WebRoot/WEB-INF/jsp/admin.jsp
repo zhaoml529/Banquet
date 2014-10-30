@@ -30,9 +30,9 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->   
 </head>
 <body>
 <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
@@ -176,15 +176,14 @@
         </div>
     </div>
 </div>
-<div class="col-md-9" role="main">
+<div class="col-sm-9" role="main">
 
-<div class="panel docs-content">
-
-<br>
+<div class="panel docs-content" >
 <div class="docs-section">
+
     <!-- 4:3 aspect ratio -->
     <div class="embed-responsive embed-responsive-4by3">
-        <iframe id="content" name="content" class="embed-responsive-item" src="${role == 1?'hotelAction/listAdminHotel/pageNum/1':'banquetAction/listBanquet/pageNum/1'}"></iframe>
+    	<iframe id="content" name="content" class="embed-responsive-item" src="${role == 1?'hotelAction/listAdminHotel/pageNum/1':'banquetAction/listBanquet/pageNum/1'}"></iframe>
     </div>
 
 </div>
@@ -193,8 +192,10 @@
 
 </div>
 </div>
+<!-- docs-container -->
 </div>
 </div>
+
 <!--End -->
 <footer class="footer" role="contentinfo">
     <div class="container">

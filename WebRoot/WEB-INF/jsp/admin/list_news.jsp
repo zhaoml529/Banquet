@@ -54,15 +54,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <input type="button" class="btn btn-primary btn-sm"  value="查找" onclick="subForm();">&nbsp;&nbsp;
      <a href="newsAction/listPendingNews/pageNum/1/1" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="right" title="查看所有酒店待审核新闻">待审核 &nbsp;<span class="badge">${newsCount }</span></a>
      </form>
-  	
+  	<div class="panel-body">
   	<div class="table-responsive">
-  	<table width="100%" align="center" class="table table-hover">
+  	<table align="center" class="table table-hover">
 		<tr class="active" align="center">
 			<td>编号</td>
-			<td>新闻标题</td>
+			<td width="25%">新闻标题</td>
 			<td>发布时间</td>
-			<td>是否<br/>显示</td>
-			<td>是否<br/>通过</td>
+			<td>是否显示</td>
+			<td>是否通过</td>
 			<td>操作</td>
 		</tr>
 		<c:choose>
@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<c:forEach items="${newsList }" var="list">
 					<tr valign="middle" style="vertical-align: middle;">
 						<td>${list.xwbh }</td>
-						<td>${list.xwbt }</td>
+						<td width="25%">${list.xwbt }</td>
 						<td>${list.fbsj }</td>
 						<td align="center">${list.xs == 1?'<span class="label label-primary">是</span>':'<span class="label label-danger">否</span>' }</td>
 						<td align="center">${list.sh == 1?'<span class="label label-primary">是</span>':'<span class="label label-danger">否</span>' }</td>
@@ -84,10 +84,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							|
 							<c:choose>
 								<c:when test="${list.xs == 1 }">
-									<a href="newsAction/adminDisplayNews/${list.xwbh }/0">不显示</a>
+									<a href="newsAction/adminDisplayNews/${list.xwbh }/0">不显示</a>|
 								</c:when>
 								<c:otherwise>
-									<a href="newsAction/adminDisplayNews/${list.xwbh }/1">显示</a>
+									<a href="newsAction/adminDisplayNews/${list.xwbh }/1">显示</a>|
 								</c:otherwise>
 							</c:choose>
 							<a href="newsAction/adminUpdateNewsById/${list.xwbh }">修改</a>
@@ -102,25 +102,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</table>
 	</div>
 	</div>
-	<div class="row">
-        <div id="select" class="col-sm-12"
-             style="text-align: center;margin-top: 10px">
-            <ul class="pagination">
-	            <c:if test="${pageBean.hasPreviousPage == true}">
-	            	<li><a href="newsAction/${pageAction }/pageNum/${pageBean.prePage}/${hotel_id }">&laquo;</a></li>
-	            </c:if>
-            	<c:forEach varStatus="i" begin="1" end="${pageBean.totalPage}" step="1">
-                	<c:if test="${i.count <= 5 }">
-                	<li ${pageBean.currentPage == i.count?"class=active":"" }><a href="newsAction/${pageAction }/pageNum/${i.count }/${hotel_id }">${i.count }</a></li>
-                	</c:if>
-                </c:forEach>
-             	<c:if test="${pageBean.hasNextPage == true}">
-                <li><a href="newsAction/${pageAction }/pageNum/${pageBean.nextPage}/${hotel_id }">&raquo;</a></li>
+	<div id="select" class="col-sm-12"
+             style="text-align: center;">
+        <ul class="pagination">
+         <c:if test="${pageBean.hasPreviousPage == true}">
+         	<li><a href="newsAction/${pageAction }/pageNum/${pageBean.prePage}/${hotel_id }">&laquo;</a></li>
+         </c:if>
+        	<c:forEach varStatus="i" begin="1" end="${pageBean.totalPage}" step="1">
+            	<c:if test="${i.count <= 5 }">
+            	<li ${pageBean.currentPage == i.count?"class=active":"" }><a href="newsAction/${pageAction }/pageNum/${i.count }/${hotel_id }">${i.count }</a></li>
             	</c:if>
-            </ul>
-           
-        </div>
+            </c:forEach>
+         	<c:if test="${pageBean.hasNextPage == true}">
+            <li><a href="newsAction/${pageAction }/pageNum/${pageBean.nextPage}/${hotel_id }">&raquo;</a></li>
+        	</c:if>
+        </ul>
     </div>
+	</div>
+        
 	<script>
 		$(function () {
 		  $('[data-toggle="tooltip"]').tooltip()

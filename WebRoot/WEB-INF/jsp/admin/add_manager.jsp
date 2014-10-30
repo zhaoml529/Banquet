@@ -1,5 +1,3 @@
-
-
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
@@ -12,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>修改宴会厅</title>
+    <title>添加酒店经理</title>
     
     <meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -30,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="yhtjj"]', {
-				cssPath : 'js/kindeditor-4.1.10/plugins/code/prettify.css',
+				cssPath : '<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css',
 				uploadJson : 'uploadJson/file_upload',
 				fileManagerJson : 'uploadJson/file_manager',
 				allowFileManager : true,
@@ -58,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="container">
    	 <form action="userAction/saveManager" method="post" role="form-control">
    	<div class="panel panel-primary">
-  	<div class="panel-heading"><strong>修改经理信息</strong></div>
+  	<div class="panel-heading"><strong>添加酒店经理</strong></div>
   	<div class="table-responsive">
     <table class="table table-striped">
        

@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="yhtjj"]', {
-				cssPath : 'js/kindeditor-4.1.10/plugins/code/prettify.css',
+				cssPath : '<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css',
 				uploadJson : 'uploadJson/file_upload',
 				fileManagerJson : 'uploadJson/file_manager',
 				allowFileManager : true,

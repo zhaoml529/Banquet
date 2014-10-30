@@ -95,6 +95,8 @@
     <bean id="order_hotelService" class="com.hdc.order.action.OrderAction"></bean>
     <bean id="order_banquetService" class="com.hdc.order.action.OrderAction"></bean>
 	<bean id="newsService" class="com.hdc.news.action.NewsAction"></bean>
-	<bean id="news_hotelService" class="com.hdc.menu.action.MenuAction"></bean>
-	<bean id="news_userService" class="com.hdc.menu.action.MenuAction"></bean>
+	<bean id="news_hotelService" class="com.hdc.news.action.NewsAction"></bean>
+	<bean id="news_userService" class="com.hdc.news.action.NewsAction"></bean>
+	<bean id="user_newsService" class="com.hdc.user.action.UserAction"></bean>
+	
 </beans>

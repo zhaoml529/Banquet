@@ -24,9 +24,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body style="width: 96.5%">
+  <body>
   	<div class="panel panel-primary">
   	<div class="panel-heading"><strong>酒店列表</strong></div>
+  	<div class="panel-body">
   	<div class="table-responsive">
   	<table width="100%" align="center" class="table table-hover">
 		<tr class="active">
@@ -61,24 +62,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </table>
     </div>
     </div>
-    <div class="row">
-        <div id="select" class="col-sm-12"
-             style="text-align: center;margin-top: 10px">
-            <ul class="pagination">
-	            <c:if test="${pageBean.hasPreviousPage == true}">
-	            	<li><a href="hotelAction/listAdminHotel/pageNum/${pageBean.prePage}/${xzq_id }">&laquo;</a></li>
-	            </c:if>
-            	<c:forEach varStatus="i" begin="1" end="${pageBean.totalPage}" step="1">
-                	<c:if test="${i.count <= 5 }">
-                	<li ${pageBean.currentPage == i.count?"class=active":"" }><a href="hotelAction/listAdminHotel/pageNum/${i.count }/${xzq_id }">${i.count }</a></li>
-                	</c:if>
-                </c:forEach>
-             	<c:if test="${pageBean.hasNextPage == true}">
-                <li><a href="hotelAction/listAdminHotel/pageNum/${pageBean.nextPage}/${xzq_id }">&raquo;</a></li>
+    <div id="select" class="col-sm-12"
+             style="text-align: center;">
+        <ul class="pagination">
+         <c:if test="${pageBean.hasPreviousPage == true}">
+         	<li><a href="hotelAction/listAdminHotel/pageNum/${pageBean.prePage}/${xzq_id }">&laquo;</a></li>
+         </c:if>
+        	<c:forEach varStatus="i" begin="1" end="${pageBean.totalPage}" step="1">
+            	<c:if test="${i.count <= 5 }">
+            	<li ${pageBean.currentPage == i.count?"class=active":"" }><a href="hotelAction/listAdminHotel/pageNum/${i.count }/${xzq_id }">${i.count }</a></li>
             	</c:if>
-            </ul>
-           
-        </div>
+            </c:forEach>
+         	<c:if test="${pageBean.hasNextPage == true}">
+            <li><a href="hotelAction/listAdminHotel/pageNum/${pageBean.nextPage}/${xzq_id }">&raquo;</a></li>
+        	</c:if>
+        </ul>
+    </div>
     </div>
   </body>
 </html>

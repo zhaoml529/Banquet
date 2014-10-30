@@ -208,7 +208,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="thumbnail">
 					      <img id="view" src="<%=basePath%>${!empty hotel.jdzp?hotel.jdzp:'imges/no_picture.gif' }" class="img-thumbnail" alt="${menu.cdlb }">
 					      <div class="caption">
-					        <h3><b>${hotel.jdmc }</b><small style="float: right;">联系人:${hotel.lxr }&nbsp;&nbsp;联系电话:${hotel.lxdh }</small></h3>
+					        <h3><b>${hotel.jdmc }</b><small style="float: right;"><abbr title="联系人">联系人:</abbr>${hotel.lxr }&nbsp;&nbsp;<abbr title="电话">联系电话:</abbr>${hotel.lxdh }</small></h3>
 					      	<hr style="border:1px solid #B10021;"/>
 					        <h4 style="color: blue;">酒店简介：</h4>
 					        <p>${hotel.jdjj }</p>
@@ -225,8 +225,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="row">
 					<div class="col-md-6">
 						<div class="widget-content">
-							<div class="page-title" style="margin-bottom: 25px;">新闻信息</div>
-							<ul class="list-group" style="border:1px solid red;border-color: #B10021">
+							<div class="page-title" style="margin-bottom: 25px;"><span class="glyphicon glyphicon-comment">&nbsp;</span>新闻信息</div>
+							<ul class="list-group" style="border:1px solid;border-color: #B10021">
 							<c:choose>
 								<c:when test="${empty newsList}">
 								<div class="alert alert-warning" style="text-align: center;">暂无新闻信息</div>
@@ -245,7 +245,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div> <!-- /.col-md-6 -->
 					<div class="col-md-6">
 						<div class="widget-content">
-							<div class="page-title">位置</div>
+							<div class="page-title"><span class="glyphicon glyphicon-map-marker">&nbsp;</span>位置</div>
                             <div class="contact-information" style="border:1px solid red;border-color: #B10021">
                            	        <input type="hidden" id="zb" value="${hotel.zb}">
      								<div style="width:485px;height:400px" id="mapContainer"></div>

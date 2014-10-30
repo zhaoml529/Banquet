@@ -16,10 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hdc.entity.Hotel;
+import com.hdc.entity.News;
 import com.hdc.entity.Users;
 import com.hdc.hotel.service.HotelService;
+import com.hdc.news.service.NewsService;
 import com.hdc.page.PageBean;
 import com.hdc.user.service.UserService;
+import com.hdc.util.BeanUtils;
 import com.hdc.util.StringUtils;
 /**
  * 
@@ -39,6 +42,9 @@ public class UserAction {
 	private UserService userService;
 	@Autowired
 	private HotelService user_hotelService;
+	@Autowired
+	private NewsService user_newsService;
+	
 	/**
 	 * 
 	 * @Title: listManager
@@ -96,7 +102,12 @@ public class UserAction {
 	@RequestMapping("/deleteManager/{manager_id}")
 	public ModelAndView deleteManager(@PathVariable("manager_id") int manager_id){
 		Users users =userService.getManagerById(manager_id);
-		//System.out.println(hotel+"---"+hotel.getJdmc());
+		List<News> newsList = user_newsService.findByUserId(String.valueOf(manager_id));
+		if(!BeanUtils.isBlank(newsList)){
+			for(News news:newsList){
+				user_newsService.deleteNews(news);
+			}
+		}
 		userService.deleteManager(users);
 		return new ModelAndView("redirect:/userAction/listManager/pageNum/1");
 	}

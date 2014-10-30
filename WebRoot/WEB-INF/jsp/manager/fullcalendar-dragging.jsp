@@ -126,26 +126,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     var viewName = view.name;  
                     var _id = ${hotel_id};
                     $("#calendar").fullCalendar('removeEvents');  
-                    var para = {hotel_id: _id, start:viewStart,end:viewEnd,viewName:viewName};
+                    var para = {hotel_id: _id, start:viewStart, end:viewEnd, viewName:viewName};
                    $.ajax({
-                   type: "POST", //使用post方法访问后台
-                   url: "orderAction/listOrder", //要访问的后台地址
-                   data: para, //要发送的数据
-                   success: function (data) {
-                     for(var i=0;i<data.length;i++) {  
-                            var obj = new Object();  
-                            obj.id = data[i].bh;  
-                            obj.title = data[i].yhtmz==null?'无':data[i].yhtmz +" ( "+data[i].zt+" ) ";  
-                            obj.allDay = data[i].qt;  
-                            //如果后台穿过来的是字符串格式的日期类型那么就要用到$.fullCalendar.parseDate(data[i].kssj,"yyyy-MM-dd HH:mm:ss")
-							//这个方法来解析日期，将一个字符串日期，格式成一个javascript的Date对象
-                            obj.start = data[i].kssj;
-                            obj.end =   data[i].jssj;
-                            obj.description = data[i].bz;
-                            //alert($.fullCalendar.formatDate(obj.start,"yyyy-MM-dd HH:mm:ss"));  
-                            $("#calendar").fullCalendar('renderEvent',obj,true);//把从后台取出的数据进行封装以后在页面上以fullCalendar的方式进行显示  
-                        }  
-                  }
+	                   type: "POST", //使用post方法访问后台
+	                   url: "orderAction/listOrder", //要访问的后台地址
+	                   data: para, //要发送的数据
+	                   success: function (data) {
+	                     for(var i=0;i<data.length;i++) {  
+	                            var obj = new Object();  
+	                            obj.id = data[i].bh;  
+	                            obj.title = data[i].yhtmz==null?'无':data[i].yhtmz +" ( "+data[i].zt+" ) ";  
+	                            obj.allDay = data[i].qt;  
+	                            //如果后台穿过来的是字符串格式的日期类型那么就要用到$.fullCalendar.parseDate(data[i].kssj,"yyyy-MM-dd HH:mm:ss")
+								//这个方法来解析日期，将一个字符串日期，格式成一个javascript的Date对象
+	                            obj.start = data[i].kssj;
+	                            obj.end =   data[i].jssj;
+	                            obj.description = data[i].bz;
+	                            //alert($.fullCalendar.formatDate(obj.start,"yyyy-MM-dd HH:mm:ss"));  
+	                            $("#calendar").fullCalendar('renderEvent',obj,true);//把从后台取出的数据进行封装以后在页面上以fullCalendar的方式进行显示  
+	                        }  
+	                  }
                 });
                 }, 
         eventMouseover: function (calEvent, jsEvent, view) {
@@ -553,12 +553,12 @@ function show(){
 		<div class="col-xs-12">
 			<!-- PAGE CONTENT BEGINS -->
 			<div class="row">
-				<div class="col-sm-9">
+				<div class="col-sm-10">
 					<div class="space"></div>
 					<div id="calendar"></div>
 				</div>
 
-				<div class="col-sm-3">
+				<div class="col-sm-2">
 					<div class="widget-box transparent">
 						<div class="widget-header">
 							<h4>宴会厅  (<a href="javascript:void(0);" onclick="show();">提示</a>)</h4>

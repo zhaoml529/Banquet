@@ -27,6 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <div class="panel panel-primary">
   	<div class="panel-heading"><strong>新闻列表</strong></div> 	
+  	<div class="panel-body">
   	<div class="table-responsive">
   	<table width="100%" align="center" class="table table-hover">
 		<tr class="active">
@@ -49,8 +50,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td>${list.xwbh }</td>
 						<td>${list.xwbt }</td>
 						<td>${list.fbsj }</td>
-						<td>${list.xs == 1?'<span class="label label-primary">已显示</span>':'<span class="label label-danger">未显示</span>' }</td>
-						<td>${list.sh == 1?'<span class="label label-primary">通过</span>':'<span class="label label-danger">未通过</span>' }</td>
+						<td>${list.xs == 1?'<span class="label label-primary">是</span>':'<span class="label label-danger">否</span>' }</td>
+						<td>${list.sh == 1?'<span class="label label-primary">是</span>':'<span class="label label-danger">否</span>' }</td>
 						<td>
 							<a href="newsAction/managerShowNewsById/${list.xwbh }">详情</a>
 							|
@@ -75,24 +76,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</table>
 	</div>
 	</div>
-	<div class="row">
-        <div id="select" class="col-sm-12"
-             style="text-align: center;margin-top: 10px">
-            <ul class="pagination">
-	            <c:if test="${pageBean.hasPreviousPage == true}">
-	            	<li><a href="newsAction/listManagerNews/pageNum/${pageBean.prePage}">&laquo;</a></li>
-	            </c:if>
-            	<c:forEach varStatus="i" begin="1" end="${pageBean.totalPage}" step="1">
-                	<c:if test="${i.count <= 5 }">
-                	<li ${pageBean.currentPage == i.count?"class=active":"" }><a href="newsAction/listManagerNews/pageNum/${i.count }">${i.count }</a></li>
-                	</c:if>
-                </c:forEach>
-             	<c:if test="${pageBean.hasNextPage == true}">
-                <li><a href="newsAction/listManagerNews/pageNum/${pageBean.nextPage}">&raquo;</a></li>
+	<div id="select" class="col-sm-12"
+             style="text-align: center;">
+        <ul class="pagination">
+         <c:if test="${pageBean.hasPreviousPage == true}">
+         	<li><a href="newsAction/listManagerNews/pageNum/${pageBean.prePage}">&laquo;</a></li>
+         </c:if>
+        	<c:forEach varStatus="i" begin="1" end="${pageBean.totalPage}" step="1">
+            	<c:if test="${i.count <= 5 }">
+            	<li ${pageBean.currentPage == i.count?"class=active":"" }><a href="newsAction/listManagerNews/pageNum/${i.count }">${i.count }</a></li>
             	</c:if>
-            </ul>           
-        </div>
+            </c:forEach>
+         	<c:if test="${pageBean.hasNextPage == true}">
+            <li><a href="newsAction/listManagerNews/pageNum/${pageBean.nextPage}">&raquo;</a></li>
+        	</c:if>
+        </ul>           
     </div>
-	
+	</div>
   </body>
 </html>
