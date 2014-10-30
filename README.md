@@ -1,1 +1,1 @@
-宴会网，基于SpringMVC框架开发。
+基于SpringMVC框架开发。
