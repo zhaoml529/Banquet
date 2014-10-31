@@ -40,21 +40,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <style type="text/css">
-    .ppp{
-            position: absolute;
-            z-index: 1;
-            background-color:white;
-            padding:10px;
-            height: auto;
-            width:auto;
-            border:1px solid #6F0015;
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            -o-border-radius: 20px;
-        }
-    </style>
     <script type="text/javascript">
     	var init = function() {
 			var zb = document.getElementById("zb").value;
