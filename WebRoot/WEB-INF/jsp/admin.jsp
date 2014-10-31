@@ -84,7 +84,7 @@
 <!--Begin -->
 <div class="container">
 <div class="row">
-<div class="col-sm-3">
+<div class="col-md-3">
     <div class="sidebar hidden-print affix-top" role="complementary">
         <div id="navigation">
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -176,7 +176,7 @@
         </div>
     </div>
 </div>
-<div class="col-sm-9" role="main">
+<div class="col-md-9" role="main">
 
 <div class="panel docs-content" >
 <div class="docs-section">
