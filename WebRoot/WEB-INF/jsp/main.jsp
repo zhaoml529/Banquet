@@ -217,22 +217,22 @@
 		    <div id="nav" class="col-sm-12">
 		        <ul class="nav nav-pills nav-justified">
 		            <li class="${xzq_id==1?'active':'' }">
-		            	<a href="hotelAction/listHotel/pageNum/1/1">
+		            	<a href="hotelAction/listHotel/pageNum/1/1/${newsPage }">
 		            		<span class="glyphicon glyphicon-map-marker" style="color: #ff0000"></span> 丛台区
 		            	</a>
 		            </li>
 		            <li class="${xzq_id==2?'active':'' }">
-		            	<a href="hotelAction/listHotel/pageNum/1/2">
+		            	<a href="hotelAction/listHotel/pageNum/1/2/${newsPage }">
 		            		<span class="glyphicon glyphicon-map-marker" style="color: #ff0000"></span> 邯山区
 		            	</a>
 		            </li>
 		            <li class="${xzq_id==3?'active':'' }">
-		            	<a href="hotelAction/listHotel/pageNum/1/3">
+		            	<a href="hotelAction/listHotel/pageNum/1/3/${newsPage }">
 		            		<span class="glyphicon glyphicon-map-marker" style="color: #ff0000"></span> 复兴区
 		            	</a>
 		            </li>
 		            <li class="${xzq_id==4?'active':'' }">
-		            	<a href="hotelAction/listHotel/pageNum/1/4">
+		            	<a href="hotelAction/listHotel/pageNum/1/4/${newsPage }">
 		            		<span class="glyphicon glyphicon-map-marker" style="color: #ff0000"></span> 高开区
 		            	</a>
 		            </li>
