@@ -27,7 +27,7 @@
 	    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
-	<!-- 当访问主页时自动转发到index控制器。 -->
+	<!-- 当访问主页时自动转发到/loginAction/login_view控制器。 -->
 	<mvc:view-controller path="/" view-name="forward:/loginAction/login_view"/>
 	
 	<!-- restful -->
