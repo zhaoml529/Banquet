@@ -2,13 +2,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans" 
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx" 
        xsi:schemaLocation="http://www.springframework.org/schema/beans  
                            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
                            http://www.springframework.org/schema/tx  
                            http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
                            http://www.springframework.org/schema/aop  
-                           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
+                           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+                           http://www.springframework.org/schema/context
+						   http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                           "> 
+                           
+    <!-- 在applicationContext.xml中只加载除表现层之外的所有bean，因此下面一行中不需要加载@Controller -->                       
+    <!-- 扫描注解Bean 不包括@Controller(表现层) 证@Required、@Autowired的属性被注入-->
+    <context:component-scan base-package="com.hdc">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
     <!-- 引入配置文件 --> 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
         <property name="locations"> 
@@ -74,29 +85,7 @@
 	</bean>
 	
 	<!-- 对标注@Transactional注解的Bean进行处理，以织入事务管理切面 -->
+	<!-- 为@Transactional注解事务开启事务支持 -->
     <tx:annotation-driven transaction-manager="transactionManager" /> 
-    
-    
-    <bean id="user_hotelService" class="com.hdc.user.action.UserAction"></bean>
-    <bean id="userService" class="com.hdc.user.action.UserAction"></bean>
-    <bean id="banquetService" class="com.hdc.banquet.action.BanquetAction"></bean>
-    <bean id="banquet_hotelService" class="com.hdc.banquet.action.BanquetAction"></bean>
-    <bean id="menu_hotelService" class="com.hdc.menu.action.MenuAction"></bean>
-   <!--  <bean id="banquetService" class="com.hdc.banquet.action.BanquetAction" p:banquetService-ref="banquetService"></bean> -->
-    <bean id="loginService" class="com.hdc.user.action.LoginAction"></bean>
-    <bean id="mainService" class="com.hdc.user.action.LoginAction"></bean>
-    <bean id="login_userService" class="com.hdc.user.action.LoginAction"></bean>
-    <bean id="login_newsService" class="com.hdc.user.action.LoginAction"></bean>
-    <bean id="hotelService" class="com.hdc.hotel.action.HotelAction"></bean>
-    <bean id="hotel_banquetService" class="com.hdc.hotel.action.HotelAction"></bean>
-    <bean id="hotel_menuService" class="com.hdc.hotel.action.HotelAction"></bean>
-    <bean id="hotel_newsService" class="com.hdc.hotel.action.HotelAction"></bean>
-    <bean id="orderService" class="com.hdc.order.action.OrderAction"></bean>
-    <bean id="order_hotelService" class="com.hdc.order.action.OrderAction"></bean>
-    <bean id="order_banquetService" class="com.hdc.order.action.OrderAction"></bean>
-	<bean id="newsService" class="com.hdc.news.action.NewsAction"></bean>
-	<bean id="news_hotelService" class="com.hdc.news.action.NewsAction"></bean>
-	<bean id="news_userService" class="com.hdc.news.action.NewsAction"></bean>
-	<bean id="user_newsService" class="com.hdc.user.action.UserAction"></bean>
 	
 </beans>
