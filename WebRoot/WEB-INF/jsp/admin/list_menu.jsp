@@ -17,11 +17,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/showtaocan.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
+	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
+    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/bootstrap.min.js"></script>
+    <script src="<%=basePath%>js/showtaocan.js"></script>
 
   </head>
   
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr>
 						<td>${menuList.tcbh }</td>
 						<td>${menuList.tcmc }</td>
-						<td><img id="view" src="<%=basePath%>${!empty menuList.zttp?menuList.zttp:'imges/no_picture.gif' }" width="140px" height="140px" class="img-rounded" alt="${menuList.zttp }"></td>
+						<td><img id="view" src="<%=basePath%>${!empty menuList.zttp?menuList.zttp:'images/no_picture.gif' }" width="140px" height="140px" class="img-rounded" alt="${menuList.zttp }"></td>
 						<td>
 							<a href="menuAction/showMenu/${menuList.tcbh }">查看详情</a>
 							|

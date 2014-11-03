@@ -10,19 +10,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'add_news.jsp' starting page</title>
+    <title>添加新闻</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script charset="utf-8" src="js/kindeditor-4.1.10/kindeditor-min.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
+    <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
+	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
+    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/bootstrap.min.js"></script>
+    <script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/kindeditor-min.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="xwnr"]', {

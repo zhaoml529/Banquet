@@ -18,17 +18,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="js/kindeditor-4.1.10/plugins/code/prettify.css" />
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script charset="utf-8" src="js/kindeditor-4.1.10/kindeditor-min.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css" />
+    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/bootstrap.min.js"></script>
+    <script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/kindeditor-min.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="tcjj"]', {
-				cssPath : 'js/kindeditor-4.1.10/plugins/code/prettify.css',
+				cssPath : '<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css',
 				uploadJson : 'uploadJson/file_upload',
 				fileManagerJson : 'uploadJson/file_manager',
 				allowFileManager : true,

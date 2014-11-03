@@ -10,28 +10,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'fullcalendar-dragging.jsp' starting page</title>
+<title>预定详情</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<script src="js/jquery-1.10.2.js"></script>
-<script src='js/jquery-ui.custom.min.js'></script>
-<link href="css/ace.min.css" rel="stylesheet" />
-<link href='css/fullcalendar.css' rel='stylesheet' />
-<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+<script src='<%=basePath%>js/jquery-ui.custom.min.js'></script>
+<link href="<%=basePath%>css/ace.min.css" rel="stylesheet" />
+<link href='<%=basePath%>css/fullcalendar.css' rel='stylesheet' />
+<link href="<%=basePath%>css/bootstrap-datetimepicker.min.css" rel="stylesheet"
 	media="screen">
-<link href="css/fullcalendar.print.css" rel="stylesheet" media='print'>
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script src="js/bootstrap.min.js"></script>
-<script src="js/fullcalendar.min.js"></script>
-<script src="js/ace.min.js"></script>
-<script src="js/bootbox.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"
+<link href="<%=basePath%>css/fullcalendar.print.css" rel="stylesheet" media='print'>
+<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="<%=basePath%>js/bootstrap.min.js"></script>
+<script src="<%=basePath%>js/fullcalendar.min.js"></script>
+<script src="<%=basePath%>js/ace.min.js"></script>
+<script src="<%=basePath%>js/bootbox.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/bootstrap-datetimepicker.min.js"
 	charset="UTF-8"></script>
-<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"
+<script type="text/javascript" src="<%=basePath%>js/bootstrap-datetimepicker.zh-CN.js"
 	charset="UTF-8"></script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">

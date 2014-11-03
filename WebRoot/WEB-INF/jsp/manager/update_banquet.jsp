@@ -17,18 +17,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="js/kindeditor-4.1.10/plugins/code/prettify.css" />
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script charset="utf-8" src="js/kindeditor-4.1.10/kindeditor-min.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
+	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css" />
+    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/bootstrap.min.js"></script>
+    <script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/kindeditor-min.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="yhtjj"]', {
-				cssPath : 'js/kindeditor-4.1.10/plugins/code/prettify.css',
+				cssPath : '<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css',
 				uploadJson : 'uploadJson/file_upload',
 				fileManagerJson : 'uploadJson/file_manager',
 				allowFileManager : false,
@@ -91,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form>
     <form action="banquetAction/uploadBanquetPic/${banquetRoom.yhtbh }" method="post" enctype="multipart/form-data">
     <div class="media">
-    			<img id="view" src="<%=basePath%>${!empty banquetRoom.yhttp?banquetRoom.yhttp:'imges/no_picture.gif' }" class="img-thumbnail" alt="${banquetRoom.yhtmc }">
+    			<img id="view" src="<%=basePath%>${!empty banquetRoom.yhttp?banquetRoom.yhttp:'images/no_picture.gif' }" class="img-thumbnail" alt="${banquetRoom.yhtmc }">
     			<div class="media-body">
     				<h3 class="media-heading">宴会厅照片</h3>
     				<input type="file" id="file" name="file" required />  

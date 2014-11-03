@@ -19,16 +19,17 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
 		<meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
+		<link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
 		<meta name="viewport" content="width=device-width" />
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!-- Custom styles for this template -->
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootbox.min.js"></script>
+		<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+		<script src="<%=basePath%>js/bootstrap.min.js"></script>
+		<script src="<%=basePath%>js/bootbox.min.js"></script>
 		<!-- HTML 5 shim for IE backwards compatibility -->
 		<!-- [if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="<%=basePath%>js/html5.js"></script>
+			<script src="<%=basePath%>js/respond.min.js"></script>
 		<![endif]-->
 		<script type="text/javascript">
 			function search(){
@@ -78,7 +79,7 @@
     <div class="container" style="margin-top: 5px;">
 		<div class="row img-rounded">
 			<div class="col-sm-9" style="padding-top: 20px;padding-bottom:5px;">
-				<img src="imges/logo.png" style="width: 200px">
+				<img src="<%=basePath%>images/logo.png" style="width: 200px">
 			</div>
 
 			<div class="col-sm-3"

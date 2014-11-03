@@ -19,16 +19,15 @@
 <meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
+<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
 <link type="text/css" rel="stylesheet"
-	href="js/kindeditor-4.1.10/plugins/code/prettify.css" />
-<script src="js/jquery-1.10.2.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script charset="utf-8" src="js/kindeditor-4.1.10/kindeditor-min.js"></script>
-<script charset="utf-8" src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>
-<script charset="utf-8"
-	src="js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+	href="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.css" />
+<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+<script src="<%=basePath%>js/bootstrap.min.js"></script>
+<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/kindeditor-min.js"></script>
+<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
 </head>
 
 
@@ -64,7 +63,7 @@
 							<tr>
 								<td>${banquetList.yhtbh }</td>
 								<td>${banquetList.yhtmc }</td>
-								<td><img id="view" src="<%=basePath%>${!empty banquetList.yhttp?banquetList.yhttp:'imges/no_picture.gif' }" width="140px" height="140px" class="img-rounded" alt="${banquetList.yhtmc }"></td>
+								<td><img id="view" src="<%=basePath%>${!empty banquetList.yhttp?banquetList.yhttp:'images/no_picture.gif' }" width="140px" height="140px" class="img-rounded" alt="${banquetList.yhtmc }"></td>
 								<td><a
 									href="banquetAction/showBanquetRoom/${banquetList.yhtbh }">查看详情</a>
 									| <a

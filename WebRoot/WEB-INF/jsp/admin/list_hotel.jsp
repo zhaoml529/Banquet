@@ -17,10 +17,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
+	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
+    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/bootstrap.min.js"></script>
 
   </head>
   
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr>
 						<td>${list.jdbh }</td>
 						<td>${list.jdmc }</td>
-						<td><img id="view" src="<%=basePath%>${!empty list.jdzp?list.jdzp:'imges/no_picture.gif' }" width="140px" height="140px" class="img-rounded" alt="${list.jdmc }"></td>
+						<td><img id="view" src="<%=basePath%>${!empty list.jdzp?list.jdzp:'images/no_picture.gif' }" width="140px" height="140px" class="img-rounded" alt="${list.jdmc }"></td>
 						<td>
 							<a href="hotelAction/showHotel/${list.jdbh}">查看详情</a>
 							|

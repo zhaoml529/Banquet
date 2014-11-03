@@ -17,13 +17,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <script charset="utf-8" src="http://map.qq.com/api/js?v=1"></script>
-    <script src="js/hotel.js"></script>
-	<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/guanli.js"></script>
+    <script src="<%=basePath%>js/hotel.js"></script>
+	<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+	<script src="<%=basePath%>js/bootstrap.min.js"></script>
+	<script src="<%=basePath%>js/guanli.js"></script>
 	<script type="text/javascript">
 		var init = function() {
 			var zb = document.getElementById("zb").value;

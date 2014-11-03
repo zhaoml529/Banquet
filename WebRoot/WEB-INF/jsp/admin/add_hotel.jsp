@@ -16,18 +16,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="js/kindeditor-4.1.10/plugins/code/prettify.css" />
 	<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
 	<script src="<%=basePath%>js/bootstrap.min.js"></script>
-	<script src="js/ajaxfileupload.js"></script>
-    <script src="js/upload.js"></script>
-    <script src="js/map.js"></script>
+	<script src="<%=basePath%>js/ajaxfileupload.js"></script>
+    <script src="<%=basePath%>js/upload.js"></script>
+    <script src="<%=basePath%>js/map.js"></script>
     <script charset="utf-8" src="http://map.qq.com/api/js?v=1"></script>
-    <script charset="utf-8" src="js/kindeditor-4.1.10/kindeditor-min.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>
-	<script charset="utf-8" src="js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+    <script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/kindeditor-min.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="jdjj"]', {

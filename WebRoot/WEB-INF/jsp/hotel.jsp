@@ -24,22 +24,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
     <meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
+    <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script charset="utf-8" src="http://map.qq.com/api/js?v=1"></script>
 	<!-- CSS Bootstrap & Custom -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/templatemo_misc.css">
-	<script src="js/jquery-1.10.2.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootbox.min.js"></script>
+    <link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=basePath%>css/animate.css">
+    <link rel="stylesheet" href="<%=basePath%>css/font-awesome.min.css">
+	<link rel="stylesheet" href="<%=basePath%>css/templatemo_misc.css">
+	<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+	<script src="<%=basePath%>js/bootstrap.min.js"></script>
+	<script src="<%=basePath%>js/bootbox.min.js"></script>
 	<!-- Main CSS -->
-	<link rel="stylesheet" href="css/templatemo_style.css">
+	<link rel="stylesheet" href="<%=basePath%>css/templatemo_style.css">
 
-	<!-- Favicons -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
     <script type="text/javascript">
     	var init = function() {
 			var zb = document.getElementById("zb").value;
@@ -272,17 +270,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div> <!-- /.templatemo_footer -->
 
 	<!-- Scripts -->
-    <script src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/modernizr.js"></script>
-	<script src="js/tabs.js"></script>
-	<script src="js/jquery.lightbox.js"></script>
-	<script src="js/templatemo_custom.js"></script>
+    <script src="<%=basePath%>js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<%=basePath%>js/modernizr.js"></script>
+	<script src="<%=basePath%>js/tabs.js"></script>
+	<script src="<%=basePath%>js/jquery.lightbox.js"></script>
+	<script src="<%=basePath%>js/templatemo_custom.js"></script>
 	<!-- 
     	Free Responsive Template by templatemo
     	http://www.cssmoban.com
 	-->
-    <script src="js/bootstrap-tooltip.js"></script>
-	<script src="js/bootstrap-popover.js"></script>
+    <script src="<%=basePath%>js/bootstrap-tooltip.js"></script>
+	<script src="<%=basePath%>js/bootstrap-popover.js"></script>
 	<c:forEach items="${banquetList }" var="list" varStatus="i">
       <script>
 			$("#news_top${list.yhtbh}").click(function(){
