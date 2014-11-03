@@ -203,6 +203,20 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+		<footer class="container">
+			<div class="credit row">
+				<div class="col-md-12">
+					    <div class="col-sm-12 img-rounded" style="text-align: center;margin-top: 5px;margin-bottom: 20px;padding-top: 5px;">
+					        Copyright © 2014 <a href="#">Your Company Name</a> 
+					        <a href="#" target="_blank" title="邯郸宴会网">邯郸宴会网</a> | Collect from 
+							<a href="#" title="邯郸宴会网" target="_blank">邯郸宴会网</a> &nbsp;&nbsp;
+							<a href="loginAction/toLogin">后台登录</a>
+					    </div>
+				</div>
+			</div>
+		</footer>
+		</div>
 	</div>
   </body>
 </html>
