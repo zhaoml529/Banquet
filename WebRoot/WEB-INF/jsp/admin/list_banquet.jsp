@@ -78,8 +78,6 @@
 				</c:choose>
 			</table>
 		</div>
-	</div>
-	<div class="row">
 		<div id="select" class="col-sm-12"
 			style="text-align: center;margin-top: 10px">
 			<ul class="pagination">
@@ -103,7 +101,6 @@
 					</li>
 				</c:if>
 			</ul>
-
 		</div>
 	</div>
 </body>

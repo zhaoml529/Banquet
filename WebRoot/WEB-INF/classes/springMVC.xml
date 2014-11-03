@@ -44,13 +44,11 @@
 
 <!-- 对静态资源文件的访问 -->  
 <!-- 所有的页面引用到css/**的资源都从css/*里面进行查找 -->
- 	<mvc:resources mapping="fonts/**" location="fonts/" cache-period="31556926"/>  
-    <mvc:resources mapping="js/**" location="js/" cache-period="31556926"/>  
-    <mvc:resources mapping="css/**" location="css/" cache-period="31556926"/>
-	<mvc:resources mapping="imges/**" location="imges/" cache-period="31556926"/>
-	<mvc:resources mapping="img/**" location="img/" cache-period="31556926"/>
-	<mvc:resources mapping="images/**" location="images/" cache-period="31556926"/>
-	<mvc:resources mapping="UploadFile/**" location="/UploadFile/" cache-period="31556926"/>
+ 	<mvc:resources mapping="/fonts/**" location="/WEB-INF/fonts/" cache-period="31556926"/>  
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/" cache-period="31556926"/>  
+    <mvc:resources mapping="/css/**" location="/WEB-INF/css/" cache-period="31556926"/>
+	<mvc:resources mapping="/images/**" location="/WEB-INF/images/" cache-period="31556926"/>
+	<mvc:resources mapping="/UploadFile/**" location="UploadFile/" cache-period="31556926"/>
 
    
 <!-- 全局异常配置 -->  
