@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="./#" class="navbar-brand" alt="Less">
-                <img src="<%=basePath %>imges/logo.png">
+                <img src="<%=basePath %>images/logo.png">
             </a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
