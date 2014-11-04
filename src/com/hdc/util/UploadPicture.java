@@ -14,6 +14,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -24,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
  *
  */
 public class UploadPicture {
+	private Logger log = Logger.getLogger(getClass());
 	//image/jpeg,image/jpg,image/bmp,image/gif,image/png,image/pjpeg,image/x-png
 	private static final String PICTURE_TYPE = "image/jpeg,image/jpg,image/bmp,image/gif,image/png,image/pjpeg,image/x-png";
 	public String uploadPic(MultipartFile file, String picType, HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException{
@@ -31,7 +33,7 @@ public class UploadPicture {
 		String user_id = (String) request.getSession().getAttribute("user_id");
 		String contentType = file.getContentType();
 		if(PICTURE_TYPE.contains(contentType)){
-			String pic_path = request.getSession().getServletContext().getRealPath("UploadFile");
+			String pic_path = request.getSession().getServletContext().getRealPath("/UploadFile");
 			Date nowTime = new Date();
 			String timestamp = DateUtil.DateToString(nowTime, "yyyyMMddHHmmss"); 
 			String file_path = "/UserFiles/"+user_id+"/"+picType+"/";
@@ -53,6 +55,7 @@ public class UploadPicture {
 			response.getWriter().print("<script>alert('上传成功！');</script>");
 		}else{
 			response.getWriter().print("<script>alert('图片格式不正确！');</script>");
+			log.error("图片格式不正确！");
 		}
 		return newURL;
 		

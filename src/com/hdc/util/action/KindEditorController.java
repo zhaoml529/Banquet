@@ -26,6 +26,7 @@ import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,14 +35,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * 
  * @ClassName: KindEditorController
  * @Description:TODO(kindEditor控制类)
- * @author: zml
+ * @author: zml 
  * @date: 2014-4-18 上午10:21:07
  *
  */
 @Controller
 @RequestMapping("/uploadJson")
 public class KindEditorController {
-
+	private Logger log = Logger.getLogger(getClass());
 	private static final ObjectMapper objectMapper = new ObjectMapper();
 	private  PrintWriter writer = null;
 	@SuppressWarnings("rawtypes")
@@ -51,7 +52,7 @@ public class KindEditorController {
 			FileUploadException {
 		ServletContext application = request.getSession().getServletContext();
 		//文件保存目录路径
-		String savePath = application.getRealPath("/") + "UploadFile/";
+		String savePath = application.getRealPath("/") + "/UploadFile/";
 
 		// 文件保存目录URL
 		String saveUrl = request.getContextPath() + "/UploadFile/";
@@ -125,6 +126,7 @@ public class KindEditorController {
 				// 检查文件大小
 				if (item.getSize() > maxSize) {
 					writer.println(objectMapper.writeValueAsString(getError("上传文件大小超过限制。")));
+					log.error("上传文件大小超过限制。");
 				}
 				// 检查扩展名
 				String fileExt = fileName.substring(
@@ -132,6 +134,7 @@ public class KindEditorController {
 				if (!Arrays.<String> asList(extMap.get(dirName).split(","))
 						.contains(fileExt)) {
 					writer.println(objectMapper.writeValueAsString(getError("上传文件扩展名是不允许的扩展名。\n只允许"+ extMap.get(dirName) + "格式。")));
+					log.error("上传文件扩展名是不允许的扩展名。\n只允许"+ extMap.get(dirName) + "格式。");
 					return;
 				}
 
@@ -143,6 +146,7 @@ public class KindEditorController {
 					item.write(uploadedFile);
 				} catch (Exception e) {
 					writer.println(objectMapper.writeValueAsString(getError("上传文件失败。")));
+					log.error("上传文件失败。");
 				}
 
 				Map<String, Object> msg = new HashMap<String, Object>();
@@ -169,7 +173,7 @@ public class KindEditorController {
 		ServletContext application = request.getSession().getServletContext();
 		ServletOutputStream out = response.getOutputStream();
 		// 根目录路径，可以指定绝对路径，比如 /var/www/attached/
-		String rootPath = application.getRealPath("/") + "UploadFile/";
+		String rootPath = application.getRealPath("/") + "/UploadFile/";
 		// 根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
 		String rootUrl = request.getContextPath() + "/UploadFile/";
 		// 图片扩展名
@@ -338,13 +342,13 @@ public class KindEditorController {
     {
 		ServletContext application = request.getSession().getServletContext();
 		String url = request.getParameter("url");
-		String savePath = application.getRealPath("/") + "UploadFile/image";
+		String savePath = application.getRealPath("/") + "/UploadFile/image";
 		int nameIndex = url.lastIndexOf("image");
 		String fileName = url.substring(nameIndex+5);
 		File dirFile = new File(savePath+fileName);
 		if (dirFile.isFile() && dirFile.exists()) {
 			System.out.println("图片存在");
-			dirFile.delete();
+			dirFile.delete(); 
 			return "1";
 		}else{
 			System.out.println("图片不存在");
