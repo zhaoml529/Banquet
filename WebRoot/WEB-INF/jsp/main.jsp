@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -122,13 +123,25 @@
 		</div> 
 		<div class="row" style="margin-top: 5px;margin-bottom: 5px;">
 			<div class="col-sm-4 img-thumbnail">
-				<marquee direction="left" scrollamount="4" behavior="alternate">
-		            <c:forEach items="${listURL }" var="list" varStatus="i">
-						<a href="hotelAction/listHotel/${list.jdbh }"> 
-							<img class="img-thumbnail" src="<%=basePath%>${list.jdzp }" style="width: 386px;height: 280px" alt="${list.jdmc }">
+				<c:choose>
+					<c:when test="${listURL== null || fn:length(listURL) == 0}">
+						<img class="img-thumbnail" src="<%=basePath%>images/no_picture.gif" style="width: 386px;height: 280px" alt="暂无图片">
+					</c:when>
+					<c:when test="${fn:length(listURL) == 1 }">
+						<a href="hotelAction/listHotel/${listURL[0].jdbh }"> 
+							<img class="img-thumbnail" src="<%=basePath%>${listURL[0].jdzp }" style="width: 386px;height: 280px" alt="${listURL[0].jdmc }">
 						</a>
-					</c:forEach>
-		        </marquee>
+					</c:when>
+					<c:otherwise>
+						<marquee direction="left" scrollamount="4" behavior="alternate">
+				            <c:forEach items="${listURL }" var="list" varStatus="i">
+								<a href="hotelAction/listHotel/${list.jdbh }"> 
+									<img class="img-thumbnail" src="<%=basePath%>${list.jdzp }" style="width: 386px;height: 280px" alt="${list.jdmc }">
+								</a>
+							</c:forEach>
+			        	</marquee>
+					</c:otherwise>
+				</c:choose>
 			</div>
 			<div class="col-sm-5">
 				<ul class="list-group">
