@@ -27,8 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
     	KindEditor.ready(function(K) {
 			var editor1 = K.create('textarea[name="xwnr"]', {
-				uploadJson : '<c:url value='/uploadJson/file_upload'/>',
-				fileManagerJson : '<c:url value='/uploadJson/file_manager'/>',
+				uploadJson : 'uploadJson/file_upload',
+				fileManagerJson : 'uploadJson/file_manager',
 				allowFileManager : true,
 				afterCreate : function() {
 					var self = this;
