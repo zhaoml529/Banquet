@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="GBK"?>
-
-<hotel> 
-  <picture id="1"> 
-    <url>/Banquet/UploadFile/UserFiles/1/hotel/20140818214203.jpg</url>  
-    <title>帆船酒店</title> 
-  </picture>  
-  <picture id="2"> 
-    <url>/Banquet/UploadFile/UserFiles/1/hotel/20140818214452.jpg</url>  
-    <title>迪拜亚特兰蒂斯酒店</title> 
-  </picture>  
-  <picture id="3"> 
-    <url>/Banquet/UploadFile/UserFiles/1/hotel/20140818214545.jpg</url>  
-    <title>酒店3</title> 
-  </picture>  
-  <picture id="4"> 
-    <url>/Banquet/UploadFile/UserFiles/1/hotel/20140818214603.jpg</url>  
-    <title>酒店4</title> 
-  </picture>  
-  <picture id="5">
-    <url>/Banquet/UploadFile/UserFiles/1/hotel/20140818214625.jpg</url>
-    <title>酒店6</title>
-  </picture> 
-</hotel>
+<?xml version="1.0" encoding="UTF-8"?>
+<hotel></hotel>
