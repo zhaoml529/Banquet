@@ -44,7 +44,7 @@ public class LoginAction {
 	
 	@RequestMapping("/login_view")
 	public  String loginView(HttpServletRequest request,ModelMap modelMap){
-		String pic_path = request.getSession().getServletContext().getRealPath("WEB-INF");
+		String pic_path = request.getSession().getServletContext().getRealPath("/WEB-INF");
 		pic_path+=File.separator+"carousel_pic.xml";
 		mainService.initHotelPageBean(1, "1");
 		PageBean<Hotel> pageBean = mainService.getHotelPageBean();

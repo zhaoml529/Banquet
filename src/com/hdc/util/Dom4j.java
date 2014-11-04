@@ -6,14 +6,10 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.dom4j.Attribute;
+import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
-import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
@@ -22,6 +18,7 @@ import org.dom4j.io.XMLWriter;
 import com.hdc.entity.Hotel;
 
 public class Dom4j {
+	private static Logger log = Logger.getLogger(Dom4j.class);
 	public static void createXML(String hotel_id, String pic_path) {
 		// 创建读入对象
 		SAXReader reader = new SAXReader();
@@ -46,8 +43,8 @@ public class Dom4j {
 			// 格式化输出,类型IE浏览一样
 			OutputFormat format = OutputFormat.createPrettyPrint();
 			// OutputFormat format = OutputFormat.createCompactFormat();
-			//format.setEncoding("UTF-8");
-			format.setEncoding("GBK");
+			format.setEncoding("UTF-8");
+			//format.setEncoding("GBK");
 			// 创建写出对象
 			XMLWriter writer = new XMLWriter(out, format);
 			writer.write(doc);
@@ -55,9 +52,11 @@ public class Dom4j {
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 		}
 	}
 
@@ -83,6 +82,7 @@ public class Dom4j {
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 		}
 		return flag;
 
@@ -125,8 +125,8 @@ public class Dom4j {
 			// 格式化输出
 			OutputFormat format = OutputFormat.createPrettyPrint();
 			// OutputFormat format = OutputFormat.createCompactFormat();
-			//format.setEncoding("UTF-8");
-			format.setEncoding("GBK");
+			format.setEncoding("UTF-8");
+			//format.setEncoding("GBK");
 			// 创建写出对象
 			XMLWriter writer = new XMLWriter(out, format);
 			writer.write(doc);
@@ -164,8 +164,8 @@ public class Dom4j {
 			// 格式化输出
 			OutputFormat format = OutputFormat.createPrettyPrint();
 			// OutputFormat format = OutputFormat.createCompactFormat();
-			//format.setEncoding("UTF-8");
-			format.setEncoding("GBK");
+			//format.setEncoding("GBK");
+			format.setEncoding("UTF-8");
 			// 创建写出对象
 			XMLWriter writer = new XMLWriter(out, format);
 			writer.write(doc);
@@ -195,6 +195,7 @@ public class Dom4j {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			log.error(e);
 		}
 		return listURL;
 	}

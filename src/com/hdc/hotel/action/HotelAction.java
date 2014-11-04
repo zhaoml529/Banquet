@@ -11,8 +11,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.dom4j.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,7 +50,7 @@ import com.hdc.util.UploadPicture;
 @Controller
 @RequestMapping("/hotelAction")
 public class HotelAction {
-	protected final transient Log log = LogFactory.getLog(HotelAction.class);
+	private Logger log = Logger.getLogger(getClass());
 	private static final String HOTEL = "hotel";
 	
 	@Autowired
@@ -134,7 +133,7 @@ public class HotelAction {
 		modelMap.addAttribute("listHotel",list);
 		modelMap.addAttribute("xzq_id", xzq_id);
 		modelMap.addAttribute("hotelPage", pageNum);
-		String pic_path = request.getSession().getServletContext().getRealPath("WEB-INF");
+		String pic_path = request.getSession().getServletContext().getRealPath("/WEB-INF");
 		pic_path+=File.separator+"carousel_pic.xml";
 		List<Hotel> listURL = Dom4j.listXML(pic_path);
 		modelMap.addAttribute("listURL", listURL);
@@ -329,7 +328,7 @@ public class HotelAction {
 	 */
 	@RequestMapping("/getHotelAllList/pageNum/{pageNum}")
 	public String getHotelAllList(@PathVariable("pageNum") String pageNum, HttpServletRequest request, ModelMap modelMap){
-		String pic_path = request.getSession().getServletContext().getRealPath("WEB-INF");
+		String pic_path = request.getSession().getServletContext().getRealPath("/WEB-INF");
 		pic_path+=File.separator+"carousel_pic.xml";
 		if(StringUtils.isBlank(pageNum)){
 			pageNum = "1";
@@ -359,7 +358,7 @@ public class HotelAction {
 	@RequestMapping("/addCarousel/{hotel_id}")
 	public void addCarousel(@PathVariable("hotel_id") String hotel_id, HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException{
 		PrintWriter out = response.getWriter();
-		String pic_path = request.getSession().getServletContext().getRealPath("WEB-INF");
+		String pic_path = request.getSession().getServletContext().getRealPath("/WEB-INF");
 		pic_path+=File.separator+"carousel_pic.xml";
 		Hotel hotel = hotelService.getBean(Hotel.class, Integer.parseInt(hotel_id));
 		String picURL = hotel.getJdzp();
@@ -374,10 +373,12 @@ public class HotelAction {
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 			out.print("fail");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 			out.print("fail");
 		}
 		
@@ -396,7 +397,7 @@ public class HotelAction {
 	@RequestMapping("/deleteCarousel/{hotel_id}")
 	public void deleteCarousel(@PathVariable("hotel_id") String hotel_id, HttpServletRequest request, HttpServletResponse response) throws IOException, DocumentException{
 		PrintWriter out = response.getWriter();
-		String pic_path = request.getSession().getServletContext().getRealPath("WEB-INF");
+		String pic_path = request.getSession().getServletContext().getRealPath("/WEB-INF");
 		pic_path+=File.separator+"carousel_pic.xml";
 		try {
 			Dom4j.deleteXML(hotel_id, pic_path);
@@ -404,10 +405,12 @@ public class HotelAction {
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 			out.print("fail");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			log.error(e);
 			out.print("fail");
 		}
 		out.flush();
