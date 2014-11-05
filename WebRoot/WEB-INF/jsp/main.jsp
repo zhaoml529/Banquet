@@ -24,7 +24,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <!-- Custom styles for this template -->
-<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 <script src="<%=basePath%>js/bootstrap.min.js"></script>
 <script src="<%=basePath%>js/bootbox.min.js"></script>
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

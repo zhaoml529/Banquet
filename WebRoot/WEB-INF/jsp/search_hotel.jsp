@@ -23,7 +23,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!-- Custom styles for this template -->
-		<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+		<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 		<script src="<%=basePath%>js/bootstrap.min.js"></script>
 		<script src="<%=basePath%>js/bootbox.min.js"></script>
 		<!-- HTML 5 shim for IE backwards compatibility -->

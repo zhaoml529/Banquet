@@ -24,7 +24,7 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 <script src="<%=basePath%>js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet" href="<%=basePath%>css/default.css" />
 <script language="JavaScript">

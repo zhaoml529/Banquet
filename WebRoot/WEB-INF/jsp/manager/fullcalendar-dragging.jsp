@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="宴会网,邯郸宴会网,酒店,婚宴,婚宴预定">
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
-<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 <script src='<%=basePath%>js/jquery-ui.custom.min.js'></script>
 <link href="<%=basePath%>css/ace.min.css" rel="stylesheet" />
 <link href='<%=basePath%>css/fullcalendar.css' rel='stylesheet' />

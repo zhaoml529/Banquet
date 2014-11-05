@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
 	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
-    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
     <script src="<%=basePath%>js/bootstrap.min.js"></script>
     <script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/kindeditor-min.js"></script>
 	<script charset="utf-8" src="<%=basePath%>js/kindeditor-4.1.10/lang/zh_CN.js"></script>

@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <script charset="utf-8" src="http://map.qq.com/api/js?v=1"></script>
     <script src="<%=basePath%>js/hotel.js"></script>
-	<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+	<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 	<script src="<%=basePath%>js/bootstrap.min.js"></script>
 	<script src="<%=basePath%>js/guanli.js"></script>
 	<script type="text/javascript">

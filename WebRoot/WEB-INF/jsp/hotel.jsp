@@ -30,9 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- CSS Bootstrap & Custom -->
     <link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>css/animate.css">
-    <link rel="stylesheet" href="<%=basePath%>css/font-awesome.min.css">
 	<link rel="stylesheet" href="<%=basePath%>css/templatemo_misc.css">
-	<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+	<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 	<script src="<%=basePath%>js/bootstrap.min.js"></script>
 	<script src="<%=basePath%>js/bootbox.min.js"></script>
 	<!-- Main CSS -->
@@ -138,7 +137,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<!-- /.gallery-item -->
 						</div>
 						<!-- /.col-md-2 -->
-						
+						<c:if test="${i.count % 6 == 0 }">
+							<!-- 防止图片位置错位 -->
+							<br/><br/>
+						</c:if>
 					</c:forEach>
 					
 				</div> <!-- /.row -->
@@ -148,7 +150,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="content products" id="menu-2">
 			<div class="container">
 					<div class="row">
-						<c:forEach items="${menuList }" var="list">
+						<c:forEach items="${menuList }" var="list" varStatus="i">
 						<div class="col-md-4 col-sm-6" onclick="showMenu('${list.cdlb}','${list.tcjj}');">
 							<div class="product-item" >
 								<img src="<%=basePath%>${list.zttp }" alt="${list.tcmc }">
@@ -166,12 +168,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							      	</small>
 						      	</h3>
 								<hr style="border:1px solid #B10021;"/>
-						        <h4 style="color: blue;">套餐列表:</h4>
+						        <h4 style="">套餐列表:</h4>
 						        <p>${list.cdlb }</p>
 							</div> <!-- /.product-item -->
 						</div> <!-- /.col-md-4 -->
-						
-
+						<c:if test="${i.count % 3 == 0 }">
+							<!-- 防止图片位置错位 -->
+							<div class="center-block"></div>
+						</c:if>
 						</c:forEach>
 					</div> <!-- /.row -->
 			</div> <!-- /.slide-item -->

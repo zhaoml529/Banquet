@@ -17,9 +17,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 <script src='<%=basePath%>js/jquery-ui.custom.min.js'></script>
-<link href="<%=basePath%>css/ace.min.css" rel="stylesheet" />
 <link href='<%=basePath%>css/fullcalendar.css' rel='stylesheet' />
 <link href="<%=basePath%>css/bootstrap-datetimepicker.min.css" rel="stylesheet"
 	media="screen">
@@ -27,7 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="<%=basePath%>js/bootstrap.min.js"></script>
 <script src="<%=basePath%>js/fullcalendar.min.js"></script>
-<script src="<%=basePath%>js/ace.min.js"></script>
 <script src="<%=basePath%>js/bootbox.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>js/bootstrap-datetimepicker.min.js"
 	charset="UTF-8"></script>

@@ -25,7 +25,7 @@
 <!-- Custom styles for this template -->
 <link href="css/justified-nav.css" rel="stylesheet" type="text/css">
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css">
-<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- HTML 5 shim for IE backwards compatibility -->
 <!-- [if lt IE 9]>

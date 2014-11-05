@@ -24,7 +24,7 @@
     <link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<%=basePath%>css/index.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
-    <script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+    <script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
     <script src="<%=basePath%>js/bootstrap.min.js"></script>
     <script src="<%=basePath%>js/bootbox.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>

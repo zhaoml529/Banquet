@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="shortcut icon" type="image/x-icon" href="<%=basePath%>images/favicon.ico" media="screen" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="js/kindeditor-4.1.10/plugins/code/prettify.css" />
-	<script src="<%=basePath%>js/jquery-1.10.2.js"></script>
+	<script src="<%=basePath%>js/jquery-1.10.2.min.js"></script>
 	<script src="<%=basePath%>js/bootstrap.min.js"></script>
 	<script src="<%=basePath%>js/ajaxfileupload.js"></script>
     <script src="<%=basePath%>js/upload.js"></script>

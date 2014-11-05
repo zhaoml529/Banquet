@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="description" content="邯郸宴会网  简单至本  方你所需">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/guanli.js"></script>
 </head>
