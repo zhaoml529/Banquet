@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a href="loginAction/login_view">首页</a></li>
 					<li><a class="show-1 templatemo_home" href="#">大厅</a></li>
 					<li><a class="show-2 templatemo_page2" href="#">套餐</a></li>
-					<li><a class="show-3 templatemo_page3" href="#">预定详情</a></li>
+					<li><a id="yuding" class="show-3 templatemo_page3" href="#">预定详情</a></li>
 					<li><a class="show-4 templatemo_page4" href="#">酒店简介</a></li>
 					<li><a class="show-5 templatemo_page5" href="#">新闻动态</a></li>
 				</ul>
@@ -96,7 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<li><a href="loginAction/login_view">首页</a></li>
 							<li><a class="show-1 templatemo_home" href="#">大厅</a></li>
 							<li><a class="show-2 templatemo_page2" href="#">套餐</a></li>
-							<li><a class="show-3 templatemo_page3" href="#">预定详情</a></li>
+							<li><a id="yuding" class="show-3 templatemo_page3" href="#">预定详情</a></li>
 							<li><a class="show-4 templatemo_page4" href="#">酒店简介</a></li>
 							<li><a class="show-5 templatemo_page5" href="#">新闻动态</a></li>
 						</ul>
@@ -284,7 +284,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  }else{
 			  	$("#news_top${list.yhtbh}").popover({placement:'top'});
 			  }
-			  
 			}());
     </script>
 	</c:forEach>

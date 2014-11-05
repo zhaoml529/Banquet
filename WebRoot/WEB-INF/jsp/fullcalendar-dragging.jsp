@@ -179,5 +179,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="col-xs-1">
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		//模拟本月点击事件
+		$(".templatemo_page3").click(function() {
+			setTimeout(function(){
+	        	$(".fc-button-today").trigger("click");
+	        }, 500);
+	    });
+	</script>
 </body>
 </html>
