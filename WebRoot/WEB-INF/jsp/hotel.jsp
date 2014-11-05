@@ -137,10 +137,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<!-- /.gallery-item -->
 						</div>
 						<!-- /.col-md-2 -->
-						<c:if test="${i.count % 6 == 0 }">
-							<!-- 防止图片位置错位 -->
-							<br/><br/>
-						</c:if>
 					</c:forEach>
 					
 				</div> <!-- /.row -->
@@ -172,10 +168,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						        <p>${list.cdlb }</p>
 							</div> <!-- /.product-item -->
 						</div> <!-- /.col-md-4 -->
-						<c:if test="${i.count % 3 == 0 }">
-							<!-- 防止图片位置错位 -->
-							<div class="center-block"></div>
-						</c:if>
 						</c:forEach>
 					</div> <!-- /.row -->
 			</div> <!-- /.slide-item -->
@@ -188,7 +180,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div> <!-- /.row -->
 			</div> <!-- /.container -->
 		</div> <!-- /.services -->
-		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
 		<div class="content about" id="menu-4">
 			<div class="container">
 				<div class="row">
