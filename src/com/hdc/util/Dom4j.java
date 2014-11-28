@@ -1,5 +1,7 @@
 package com.hdc.util;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -46,7 +48,8 @@ public class Dom4j {
 			format.setEncoding("UTF-8");
 			//format.setEncoding("GBK");
 			// 创建写出对象
-			XMLWriter writer = new XMLWriter(out, format);
+//			XMLWriter writer = new XMLWriter(out, format);
+			XMLWriter writer = new XMLWriter(new FileOutputStream(new File(pic_path)), format);
 			writer.write(doc);
 			writer.close();
 		} catch (DocumentException e) {
@@ -128,7 +131,8 @@ public class Dom4j {
 			format.setEncoding("UTF-8");
 			//format.setEncoding("GBK");
 			// 创建写出对象
-			XMLWriter writer = new XMLWriter(out, format);
+//			XMLWriter writer = new XMLWriter(out, format);
+			XMLWriter writer = new XMLWriter(new FileOutputStream(new File(pic_path)), format);
 			writer.write(doc);
 			writer.close();
 	}
@@ -167,7 +171,8 @@ public class Dom4j {
 			//format.setEncoding("GBK");
 			format.setEncoding("UTF-8");
 			// 创建写出对象
-			XMLWriter writer = new XMLWriter(out, format);
+//			XMLWriter writer = new XMLWriter(out, format);
+			XMLWriter writer = new XMLWriter(new FileOutputStream(new File(pic_path)), format);
 			writer.write(doc);
 			writer.close();
 	}
